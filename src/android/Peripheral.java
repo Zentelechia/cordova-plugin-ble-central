@@ -343,7 +343,7 @@ public class Peripheral extends BluetoothGattCallback {
 
                 // Why doesn't setCharacteristicNotification write the descriptor?
                 BluetoothGattDescriptor descriptor = characteristic.getDescriptor(CLIENT_CHARACTERISTIC_CONFIGURATION_UUID);
-                if (descriptor != null) {
+                if (descriptor == null) {
 
                     // prefer notify over indicate
                     if ((characteristic.getProperties() & BluetoothGattCharacteristic.PROPERTY_NOTIFY) != 0) {
