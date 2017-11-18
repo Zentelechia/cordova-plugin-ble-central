@@ -47,6 +47,14 @@ module.exports = {
         notSupported();
         if (failure) failure();
     },
+    setDeviceName: function(deviceName, success, failure) {
+      notSupported();
+      if (failure) failure();
+    },
+    startNotification: function(device_id, service_uuid, characteristic_uuid, success, failure) {
+        notSupported();
+        if (failure) failure();
+    },
     stopNotifcation: function(device_id, service_uuid, characteristic_uuid, success, failure) {
         notSupported();
         if (failure) failure();
