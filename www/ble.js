@@ -91,6 +91,13 @@ module.exports = {
         cordova.exec(successWrapper, failure, 'BLE', 'connect', [device_id]);
     },
 
+    setDeviceName: function (deviceName) {
+        var successWrapper = function(peripheral) {
+            convertToNativeJS(peripheral);
+            success(peripheral);
+        };
+        cordova.exec(successWrapper, failure, 'BLE', 'setDeviceName', [deviceName]);
+    },
     disconnect: function (device_id, success, failure) {
         cordova.exec(success, failure, 'BLE', 'disconnect', [device_id]);
     },
