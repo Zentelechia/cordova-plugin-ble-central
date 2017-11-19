@@ -244,6 +244,12 @@ module.exports.withPromises = {
         });
     },
 
+    setDeviceName: function (deviceName) {
+        return new Promise(function(resolve, reject) {
+            module.exports.setDeviceName(deviceName);
+        });
+    },
+
     readRSSI: function(device_id) {
         return new Promise(function(resolve, reject) {
             module.exports.readRSSI(device_id);
