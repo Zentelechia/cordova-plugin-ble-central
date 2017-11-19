@@ -246,7 +246,7 @@ module.exports.withPromises = {
 
     setDeviceName: function (deviceName) {
         return new Promise(function(resolve, reject) {
-            module.exports.setDeviceName(deviceName);
+            module.exports.setDeviceName(deviceName, resolve, reject);
         });
     },
 
