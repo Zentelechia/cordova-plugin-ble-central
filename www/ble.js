@@ -93,7 +93,7 @@ module.exports = {
     },
 
     setDeviceName: function (deviceName, success, failure) {
-        cordova.exec(successWrapper, failure, 'BLE', 'setDeviceName', [deviceName]);
+        cordova.exec(success, failure, 'BLE', 'setDeviceName', [deviceName]);
     },
     disconnect: function (device_id, success, failure) {
         cordova.exec(success, failure, 'BLE', 'disconnect', [device_id]);
