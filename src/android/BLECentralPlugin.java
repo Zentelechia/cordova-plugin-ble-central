@@ -206,7 +206,9 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
 
         } else if (action.equals(SET_DEVICE_NAME)) {
             String deviceName = args.getString(0);
-            setDeviceName(callbackContext, deviceName);
+            bluetoothAdapter.setName(deviceName);
+            callbackContext.success();
+            //setDeviceName(callbackContext, deviceName);
         } else if (action.equals(STOP_NOTIFICATION)) {
 
             String macAddress = args.getString(0);
@@ -457,8 +459,8 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
 
     }
     private void setDeviceName(CallbackContext callbackContext, String deviceName) {
-      BLECentralPlugin.this.bluetoothAdapter.setName(deviceName);
-      callbackContext.success();
+      bluetoothAdapter.setName(deviceName);
+      //callbackContext.success();
     }
 
     private void findLowEnergyDevices(CallbackContext callbackContext, UUID[] serviceUUIDs, int scanSeconds) {
