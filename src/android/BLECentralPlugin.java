@@ -207,7 +207,6 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
         } else if (action.equals(SET_DEVICE_NAME)) {
             String deviceName = args.getString(0);
             LOG.d(TAG, "Called setDeviceName: " + deviceName);
-            console.log("Called setDeviceName: " + deviceName);
             setDeviceName(callbackContext, deviceName);
         } else if (action.equals(STOP_NOTIFICATION)) {
 
@@ -460,7 +459,6 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
     }
     private void setDeviceName(CallbackContext callbackContext, String deviceName) {
       LOG.d(TAG, "Called setDeviceName function: " + deviceName);
-      console.log("Called setDeviceName function: " + deviceName);
       bluetoothAdapter.setName(deviceName);
       callbackContext.success();
     }
