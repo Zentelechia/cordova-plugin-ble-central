@@ -460,7 +460,7 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
     private void setDeviceName(CallbackContext callbackContext, String deviceName) {
       LOG.d(TAG, "Called setDeviceName function: " + deviceName);
       BluetoothAdapter bA = null;
-      bA = BluetoothAdapter.getDefaultAdapter();
+      bA = BluetoothAdapter.getAdapter();
       bA.setName(deviceName);
       callbackContext.success();
     }
