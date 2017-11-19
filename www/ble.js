@@ -177,6 +177,7 @@ module.exports.withPromises = {
     connect: module.exports.connect,
     startNotification: module.exports.startNotification,
     startStateNotifications: module.exports.startStateNotifications,
+    setDeviceName: module.exports.setDeviceName,
 
     stopScan: function() {
         return new Promise(function(resolve, reject) {
@@ -244,11 +245,6 @@ module.exports.withPromises = {
         });
     },
 
-    setDeviceName: function (deviceName) {
-        return new Promise(function(resolve, reject) {
-            module.exports.setDeviceName(deviceName, resolve, reject);
-        });
-    },
 
     readRSSI: function(device_id) {
         return new Promise(function(resolve, reject) {
