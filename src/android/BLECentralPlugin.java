@@ -81,6 +81,7 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
     private static final int REQUEST_ENABLE_BLUETOOTH = 1;
 
     BluetoothAdapter bluetoothAdapter;
+    B
 
     // key is the MAC Address
     Map<String, Peripheral> peripherals = new LinkedHashMap<String, Peripheral>();
@@ -459,9 +460,7 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
     }
     private void setDeviceName(CallbackContext callbackContext, String deviceName) {
       LOG.d(TAG, "Called setDeviceName function: " + deviceName);
-      static BluetoothAdapter bA = null;
-      bA =  BluetoothManager.getAdapter();
-      bA.setName(deviceName);
+      bluetoothAdapter.setName(deviceName);
       callbackContext.success();
     }
 
