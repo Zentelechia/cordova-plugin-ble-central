@@ -93,10 +93,6 @@ module.exports = {
     },
 
     setDeviceName: function (deviceName, success, failure) {
-        var successWrapper = function(peripheral) {
-            convertToNativeJS(peripheral);
-            success(peripheral);
-        };
         cordova.exec(successWrapper, failure, 'BLE', 'setDeviceName', [deviceName]);
     },
     disconnect: function (device_id, success, failure) {
@@ -178,12 +174,17 @@ module.exports.withPromises = {
     connect: module.exports.connect,
     startNotification: module.exports.startNotification,
     startStateNotifications: module.exports.startStateNotifications,
-    setDeviceName: module.exports.setDeviceName,
+
 
     stopScan: function() {
         return new Promise(function(resolve, reject) {
             module.exports.stopScan(resolve, reject);
         });
+    },
+    setDeviceName: function(deviceName){
+      return new Promise(function(resolve, reject) {
+          module.exports.setDeviceName(deviceName, resolve, reject);
+      });
     },
 
     disconnect: function(device_id) {
